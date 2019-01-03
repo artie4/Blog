@@ -11,7 +11,7 @@ class NewPost extends Component {
     }
 
     componentDidMount () {
-        console.log(this.props);
+        console.log('[NewPost.js] componentDidMount()', this.props);
     }
 
     postDataHandler = () => {
@@ -22,7 +22,7 @@ class NewPost extends Component {
         };
         axios.post('/posts', data)
             .then(response => {
-                console.log(response);
+                console.log('[NewPost.js] postDataHandler()', response);
             });
     }
 

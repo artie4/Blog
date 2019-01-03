@@ -10,7 +10,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        console.log('[Posts.js] componentDidMount() ', this.props);
         axios.get('/posts')
             .then(response => {
                 const posts = response.data.slice(0, 4);
@@ -38,7 +38,7 @@ class Posts extends Component {
         if (!this.state.error) {
             posts = this.state.posts.map(post => {
                 return (
-                    <Link to={'/' + post.id} key={post.id}>
+                    <Link to={'/posts/' + post.id} key={post.id}>
                         <Post
                             key={post.id}
                             title={post.title}
